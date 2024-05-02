@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "yan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "yanserver.js",
+  "scripts": {
+    "test": "node yanserver.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
