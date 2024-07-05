@@ -57,13 +57,13 @@ const Inventory = () => {
     setEditingProduct(product);
   };
   const handleHideUpdateProduct = () => {
-    setShowAddProduct(false);
+    setEditingProduct(null);
   };
 
   return (
-    <div className="h-screen bg-gradient-to-r from-blue-300 to-pink-300 to bg-purple-200">
+    <div className="h-screen bg-orange-400">
       <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
-        <h1 className="text-3xl font-bold text-center mb-4 text-white bg-gradient-to-r from-purple-300 to-pink-600 to bg-blue-200">Product Inventory</h1>
+        <h1 className="text-3xl font-bold text-center mb-4 text-white">My Inventory</h1>
 
         {loading? (
           <div className="flex justify-center">
@@ -72,15 +72,15 @@ const Inventory = () => {
             </div>
           </div>
         ) : (
-          <table className="min-w-full divide-y divide-gray-200  overflow-x-auto shadow-md">
+          <table className="min-w-full divide-y divide-gray-200 overflow-x-auto shadow-md">
             <thead>
               <tr>
-                <th scope="col" className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product Id</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">Product Name</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">Unit</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                <th scope="col" className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Product Id</th>
+                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Product Name</th>
+                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Quantity</th>
+                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Unit</th>
+                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Price</th>
+                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Action</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -94,7 +94,7 @@ const Inventory = () => {
                     <td>{element.price}</td>
                     <td>
                       <button
-                        className="p-2 rounded bg-yellow-500 text-white hover:bg-orange-400"
+                        className="p-2 rounded bg-blue-500 text-white hover:bg-gray-700"
                         onClick={() => {
                           setEditingProduct(element);
                         }}
@@ -102,7 +102,7 @@ const Inventory = () => {
                         Edit
                       </button>
                       <button
-                        className="p-2 rounded bg-red-500 text-white hover:bg-red-700"
+                        className="p-2 rounded bg-blue-500 text-white hover:bg-gray-700"
                         onClick={() => handleDelete(element.product_id)}
                       >
                         Delete
@@ -111,13 +111,11 @@ const Inventory = () => {
                   </tr>
                 );
               })}
-              
-              
             </tbody>
           </table>
         )}
-<div className="m-5">
-          <button className="p-2 rounded bg-pink-500 text-white hover:bg-pink-700" onClick={handleShowAddProduct}>
+        <div className="flex justify-center m-5">
+          <button className="p-2 rounded bg-black text-white hover:bg-gray-700" onClick={handleShowAddProduct}>
             Add Product
           </button>
         </div>
@@ -132,14 +130,12 @@ const Inventory = () => {
           <UpdateProduct
             product={editingProduct}
             onUpdate={handleUpdate}
-onHide={() => setEditingProduct(null)}
+            onHide={handleHideUpdateProduct}
           />
         )}
-
-        
       </div>
     </div>
-);
+  );
 };
 
 export default Inventory;
