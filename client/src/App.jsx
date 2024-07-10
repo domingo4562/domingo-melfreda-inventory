@@ -40,9 +40,9 @@ function App() {
   return (
     <>
 
-<main class="container mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700">
-    <div class="w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-4">
-        <h1 class="text-4xl font-semibold">Log In</h1>
+<main class="container mx-auto p-4 mt-11 bg-white flex flex-col items-center justify-center text-gray-700">
+    <div class="w-10/12 sm:w-10/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-4">
+        <center><h1 class="text-4xl font-semibold bg-red-100">Log In</h1></center>
     </div>
 {
           showMessage &&
@@ -53,14 +53,12 @@ function App() {
           )
         }
     <div class="w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-6">
-        <input value={username}onChange={(e) => setUsername(e.target.value)} type="text" class="mb-4 p-2 appearance-none block w-full bg-gray-200 placeholder-gray-900 rounded border focus:border-teal-500" type="text" placeholder="Email"/>
-        <input value={password}onChange={(e) => setPassword(e.target.value)} type="password"  class="mb-4 p-2 appearance-none block w-full bg-gray-200 placeholder-gray-900 rounded border focus:border-teal-500" placeholder="Password"/>
+        <input value={username}onChange={(e) => setUsername(e.target.value)} type="text" class="mb-4 p-2 appearance-none block w-full bg-pink-200 placeholder-gray-900 rounded border focus:border-teal-500" type="text" placeholder="Email"/>
+        <input value={password}onChange={(e) => setPassword(e.target.value)} type="password"  class="mb-4 p-2 appearance-none block w-full bg-pink-200 placeholder-gray-900 rounded border focus:border-teal-500" placeholder="Password"/>
         <div class="flex items-center">
             <div class="w-1/2 flex items-center">
-                <input id="remember-me" type="checkbox" class="mt-1 mr-2" />
-                <label for="remember-me">Remember me!</label>
             </div>
-            <button onClick={handleLogin} class="ml-auto w-1/2 bg-gray-800 text-white p-2 rounded font-semibold hover:bg-gray-900" type="submit">Log In</button>
+            <button onClick={handleLogin} class="w-1/1 ml-auto bg-blue-800 text-white p-2 rounded font-semibold hover:bg-gray-900" type="submit">Log In</button>
         </div>
     </div>
 </main>

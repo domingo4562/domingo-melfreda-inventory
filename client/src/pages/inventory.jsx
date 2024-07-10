@@ -61,9 +61,9 @@ const Inventory = () => {
   };
 
   return (
-    <div className="h-screen bg-orange-400">
+    <div className="h-screen bg-white">
       <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
-        <h1 className="text-3xl font-bold text-center mb-4 text-white">My Inventory</h1>
+        <h1 className="text-3xl font-bold text-center mb-4 text-black">My Inventory</h1>
 
         {loading? (
           <div className="flex justify-center">
@@ -72,15 +72,15 @@ const Inventory = () => {
             </div>
           </div>
         ) : (
-          <table className="min-w-full divide-y divide-gray-200 overflow-x-auto shadow-md">
+          <table className="min-w-full divide-y divide-black overflow-x-auto shadow-md">
             <thead>
               <tr>
-                <th scope="col" className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Product Id</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Product Name</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Quantity</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Unit</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Price</th>
-                <th scope="col" className="px-6 py-3 text-left bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider font-mono">Action</th>
+                <th scope="col" className="px-6 py-3 bg-black text-left text-xs font-medium text-white uppercase tracking-wider font-mono">Product Id</th>
+                <th scope="col" className="px-6 py-3 text-left bg-black text-xs font-medium text-white uppercase tracking-wider font-mono">Product Name</th>
+                <th scope="col" className="px-6 py-3 text-left bg-black text-xs font-medium text-white uppercase tracking-wider font-mono">Quantity</th>
+                <th scope="col" className="px-6 py-3 text-left bg-black text-xs font-medium text-white uppercase tracking-wider font-mono">Unit</th>
+                <th scope="col" className="px-6 py-3 text-left bg-black text-xs font-medium text-white uppercase tracking-wider font-mono">Price</th>
+                <th scope="col" className="px-6 py-3 text-left bg-black text-xs font-medium text-white uppercase tracking-wider font-mono">Action</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -94,7 +94,7 @@ const Inventory = () => {
                     <td>{element.price}</td>
                     <td>
                       <button
-                        className="p-2 rounded bg-blue-500 text-white hover:bg-gray-700"
+                        className="p-2 rounded bg-purple-500 text-white hover:bg-gray-700"
                         onClick={() => {
                           setEditingProduct(element);
                         }}
@@ -102,7 +102,7 @@ const Inventory = () => {
                         Edit
                       </button>
                       <button
-                        className="p-2 rounded bg-blue-500 text-white hover:bg-gray-700"
+                        className="p-2 rounded bg-purple-500 text-white hover:bg-gray-700"
                         onClick={() => handleDelete(element.product_id)}
                       >
                         Delete
